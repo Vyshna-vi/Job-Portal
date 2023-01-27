@@ -1,0 +1,68 @@
+.upper{
+    height: 90px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns:auto auto auto auto ;
+    grid-column-gap: 6px;  
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.com{
+    text-decoration: none;
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
+    color: cadetblue;
+}
+.com:hover{
+    color: cornflowerblue;
+}
+.head{
+    display: grid;
+    grid-template-columns: 45px 25px;
+    grid-column-gap:15px ;
+    margin-left: 15px;
+    font-family: 'Kavoon', cursive;
+}
+.findjob{
+    margin-left: 30px;
+    margin-top: 33px;
+    display: grid;
+    grid-template-columns:auto auto auto ;
+    grid-column-gap: 5px;
+}
+.resume{
+    margin-top: 33px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 5px;
+}
+.empo{
+    margin-top: 33px;
+    display: grid;
+    grid-template-columns: auto;
+}
+.head1{
+    color: rgb(234, 45, 234);
+    text-shadow: 2px 2px violet;
+}   
+.head2{
+    color: rgb(121, 11, 223);
+    text-shadow: 2px 2px rgb(150, 79, 216);
+}
+.img{
+    width: 550px;
+    height: 350px;
+}
+.para2{
+    font-family: 'Kalam', cursive;
+}
+.para1{
+    font-family: 'Fredoka One', cursive;
+    font-size: 25px;
+}
+.lower{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+
