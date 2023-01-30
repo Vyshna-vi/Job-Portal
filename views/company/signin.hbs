@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="stylesheets/cmpsignin.css">
+<link rel="stylesheet" href="/stylesheets/cmpsignin.css" />
+
 <section class="forms-section">
     <h1 class="section-title"></h1>
     <div class="forms">
@@ -7,16 +8,16 @@
                 Login
                 <span class="underline"></span>
             </button>
-            <form class="form form-login">
+            <form class="form form-login" method="">
                 <fieldset>
                     <legend>Please, enter your email and password for login.</legend>
                     <div class="input-block">
                         <label for="login-email">E-mail</label>
-                        <input id="login-email" type="email" required />
+                        <input id="login-email" type="email" name="lemail" required />
                     </div>
                     <div class="input-block">
                         <label for="login-password">Password</label>
-                        <input id="login-password" type="password" required />
+                        <input id="login-password" type="password" name="lpassword" required />
                     </div>
                 </fieldset>
                 <button type="submit" class="btn-login">Login</button>
@@ -27,23 +28,31 @@
                 Sign Up
                 <span class="underline"></span>
             </button>
-            <form class="form form-signup">
+            <form class="form form-signup"  action="/company/dosignup" method="post">
                 <fieldset>
                     <legend>
                         Please, enter your email, password and password confirmation for
                         sign up.
                     </legend>
                     <div class="input-block">
+                        <label for="signup-name">Name</label>
+                        <input type="text" id="signup-name" name="compName" required>
+                    </div>
+                    <div class="input-block">
                         <label for="signup-email">E-mail</label>
-                        <input id="signup-email" type="email" required />
+                        <input id="signup-email" type="email" name="email" required />
                     </div>
                     <div class="input-block">
                         <label for="signup-password">Password</label>
-                        <input id="signup-password" type="password" required />
+                        <input id="signup-password" type="password" name="password" required />
                     </div>
                     <div class="input-block">
                         <label for="signup-password-confirm">Confirm password</label>
-                        <input id="signup-password-confirm" type="password" required />
+                        <input id="signup-password-confirm" type="password" name="password" required />
+                    </div>
+                    <div class="input-block">
+                        <label for="signup-phnno">Phone Number</label>
+                        <input id="signup-phnno" type="number" name="phnNumber" required>
                     </div>
                 </fieldset>
                 <button type="submit" class="btn-signup">Continue</button>
@@ -51,4 +60,4 @@
         </div>
     </div>
 </section>
-<script src="javascripts/cmpsingin.js"></script>
+<script src="/javascripts/compsignin.js"></script>
