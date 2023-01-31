@@ -1,7 +1,6 @@
 const CompanyModel = require("../models/companymodel");
 const bcrypt = require("bcrypt");
 
-
 const viewSignUpLoginPage = function (req, res, next) {
   res.render("company/signin");
 };
@@ -16,7 +15,7 @@ const doCmpSignUp = async function (req, res, next) {
     req.body.password = await bcrypt.hash(req.body.password, 10);
     await CompanyModel.create(req.body);
     // res.json({ sucess: true, message: "Added Sucessfully" });
-    res.redirect("/signinlogin");
+    res.redirect("/company/signinlogin");
   } catch (error) {
     console.log(error);
     res.json({ sucess: false, message: "Cannot Add" });
@@ -27,5 +26,5 @@ const doCmpSignUp = async function (req, res, next) {
 module.exports = {
   viewSignUpLoginPage,
   viewCmpHomePage,
-  doCmpSignUp
+  doCmpSignUp,
 };

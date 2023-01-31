@@ -1,5 +1,6 @@
 const UserModel = require("../models/usermodel");
 const bcrypt = require("bcrypt");
+const { model } = require("mongoose");
 
 const viewIndexPage = function (req, res, next) {
   res.render("index", { title: "Express" });
@@ -10,7 +11,11 @@ const viewSignUpPage = function (req, res, next) {
 };
 
 const viewHomePage = function (req, res, next) {
-  res.render("users/homepage");
+  if (req.session.user) {
+    res.render("users/homepage", { user:req.session.user });
+  } else {
+   res.redirect("/login");
+  }
 };
 
 const viewLoginPage = function (req, res, next) {
@@ -27,7 +32,25 @@ const doSignUp = async function (req, res, next) {
   } catch (error) {
     console.log(error);
     // res.json({ sucess: false, message: "Cannot Add" });
-    res.redirect("/signup")
+    res.redirect("/signup");
+  }
+};
+
+const doLogin = async function (req, res, next) {
+  console.log(req.body);
+  const user = await UserModel.findOne({ email: req.body.email });
+  if (user) {
+    const userExist = await bcrypt.compare(req.body.password, user.password);
+    console.log(userExist);
+    if (userExist) {
+      req.session.user = user;
+      res.redirect("/homepage");
+    } else {
+      res.redirect("/loginpage");
+    }
+  } else {
+    // res.json({ sucess: false, message: "Cannot Find User" });
+    res.redirect("/loginpage");
   }
 };
 
@@ -37,4 +60,5 @@ module.exports = {
   viewHomePage,
   viewLoginPage,
   doSignUp,
+  doLogin,
 };
