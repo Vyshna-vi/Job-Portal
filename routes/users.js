@@ -6,6 +6,7 @@ const {
   viewLoginPage,
   doSignUp,
   doLogin,
+  viewUserHomePage,
 } = require("../contollers/usercontroler");
 var router = express.Router();
 
@@ -16,5 +17,6 @@ router.get("/homepage", viewHomePage);
 router.get("/loginpage", viewLoginPage);
 router.post("/signup", doSignUp);
 router.post("/loginpage", doLogin);
+router.get("/userhomepage",viewUserHomePage)
 
 module.exports = router;

@@ -1,12 +1,16 @@
 var express = require("express");
 const {
-  viewSignUpLoginPage, viewCmpHomePage, doCmpSignUp,
+  viewSignUpLoginPage,
+  viewCmpHomePage,
+  doCmpSignUp,
+  doCmpLogin,
 } = require("../contollers/companycontroler");
 var router = express.Router();
 
 /* GET home page. */
 router.get("/signinlogin", viewSignUpLoginPage);
-router.get("/homepage",viewCmpHomePage)
-router.post("/dosignup",doCmpSignUp)
+router.get("/cmphomepage", viewCmpHomePage);
+router.post("/dosignup", doCmpSignUp);
+router.post("/signinlogin", doCmpLogin);
 
 module.exports = router;

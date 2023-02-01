@@ -7,14 +7,23 @@ const viewIndexPage = function (req, res, next) {
 };
 
 const viewSignUpPage = function (req, res, next) {
-  res.render("users/signup");
+  if(req.session.alertMsg){
+    let {alertMsg}=req.session
+    res.render("users/signup",{alertMsg});
+  }else{
+    res.render("users/signup")
+  }
 };
 
 const viewHomePage = function (req, res, next) {
+  res.render("users/homepage");
+};
+
+const viewUserHomePage = function (req, res, next) {
   if (req.session.user) {
-    res.render("users/homepage", { user:req.session.user });
+    res.render("users/userhomepage", { user: req.session.user });
   } else {
-   res.redirect("/login");
+    res.redirect("/login");
   }
 };
 
@@ -32,6 +41,7 @@ const doSignUp = async function (req, res, next) {
   } catch (error) {
     console.log(error);
     // res.json({ sucess: false, message: "Cannot Add" });
+    req.session.alertMsg="Signup Failed Retry"
     res.redirect("/signup");
   }
 };
@@ -44,7 +54,7 @@ const doLogin = async function (req, res, next) {
     console.log(userExist);
     if (userExist) {
       req.session.user = user;
-      res.redirect("/homepage");
+      res.redirect("/userhomepage");
     } else {
       res.redirect("/loginpage");
     }
@@ -61,4 +71,5 @@ module.exports = {
   viewLoginPage,
   doSignUp,
   doLogin,
+  viewUserHomePage,
 };

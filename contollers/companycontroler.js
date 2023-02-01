@@ -6,7 +6,12 @@ const viewSignUpLoginPage = function (req, res, next) {
 };
 
 const viewCmpHomePage = function (req, res, next) {
-  res.render("user/homepage");
+  if (req.session.company) {
+    res.render("company/cmphomepage", { company: req.session.company });
+  } else {
+    res.redirect("company/signinlogin");
+  }
+  res.render("company/cmphomepage");
 };
 
 const doCmpSignUp = async function (req, res, next) {
@@ -23,8 +28,30 @@ const doCmpSignUp = async function (req, res, next) {
   }
 };
 
+const doCmpLogin = async function (req, res, next) {
+  console.log(req.body);
+  const company = await CompanyModel.findOne({ email: req.body.email });
+  if (company) {
+    const companyExsist = await bcrypt.compare(
+      req.body.password,
+      company.password
+    );
+    console.log(companyExsist);
+    if (companyExsist) {
+      req.session.company = company;
+      res.redirect("/company/cmphomepage");
+    } else {
+      res.redirect("/company/signlogin");
+    }
+  } else {
+    // res.json({ sucess: false, message: "Cannot Find Company" });
+    res.redirect("/company/signinlogin");
+  }
+};
+
 module.exports = {
   viewSignUpLoginPage,
   viewCmpHomePage,
   doCmpSignUp,
+  doCmpLogin,
 };
