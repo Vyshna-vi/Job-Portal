@@ -1,0 +1,55 @@
+<form action="/company/addjob" method="post">
+    <div>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title">
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="4" cols="50">
+</textarea>
+    </div>
+    <div>
+        <label for="qualification">Choose Qualification</label>
+        <select name="qualification" id="qualification">
+            <option value="tenth">10th</option>
+            <option value="plustwo">PlusTwo</option>
+            <option value="degree">Degree</option>
+            <option value="diploma">Diploma</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div>
+        <label for="vacancy">Vacancies</label>
+        <input type="number" id="vacancy" name="vacancies">
+    </div>
+    <div>
+        <label for="salary">Salary</label>
+        <input type="number" id="salary" name="salary">
+    </div>
+    <div>
+        <label for="experience">Choose Experience</label>
+        <select name="experience" id="experience">
+            <option value="fresher">Fresher</option>
+            <option value="one-two">1-2 Years</option>
+            <option value="three-four">3-4 Years</option>
+            <option value="five">5 and Above</option>
+        </select>
+    </div>
+    <div>
+        <label for="lastdate">Last Date</label>
+        <input type="date" id="lastdate" name="lastDate">
+    </div>
+    <div>
+        <p>Job type:</p>
+        <input type="radio" id="parttime" name="jobType" value="parttime">
+        <label for="parttime">Part Time</label><br>
+        <input type="radio" id="fulltime" name="jobType" value="fulltime">
+        <label for="fulltime">Full Time</label><br>
+        <input type="radio" id="workhome" name="jobType" value="workhome">
+        <label for="workhome">Work From Home</label>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+
+</form>

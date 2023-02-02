@@ -1,9 +1,4 @@
 <link rel="stylesheet" href="stylesheets/signup.css">
-{{#if alertMsg}}
-<div>
-    <p>{{alertMsg}}</p>
-</div>
-{{/if}}
 <div class="main">
     <div class="c1">
         <form action="/signup" method="post">
@@ -37,5 +32,10 @@
             </div>
             <div class="subbtn"><button class="btn1">Submit</button></div>
         </form>
+        {{#if alertMsg}}
+        <div class="alert">
+            <p>{{alertMsg}}</p>
+        </div>
+        {{/if}}
     </div>
 </div>
