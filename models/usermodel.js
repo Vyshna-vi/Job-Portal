@@ -31,6 +31,24 @@ const userSchema = new mongoose.Schema({
     type: String,
     required:true
   },
+  about: {
+    type: String,
+  },
+  qualification:{
+    type:String
+  },
+  skill:{
+    type:String
+  },
+  experiance:{
+    type:String
+  },
+  jobcatagory:{
+    type:String
+  },
+  language:{
+    type:String
+  }
 });
 
 const UserModel = mongoose.model("User", userSchema);

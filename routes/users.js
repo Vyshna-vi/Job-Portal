@@ -7,6 +7,8 @@ const {
   doSignUp,
   doLogin,
   viewUserHomePage,
+  upDateUserProfile,
+  userProfile,
 } = require("../contollers/usercontroler");
 var router = express.Router();
 
@@ -18,5 +20,7 @@ router.get("/loginpage", viewLoginPage);
 router.post("/signup", doSignUp);
 router.post("/loginpage", doLogin);
 router.get("/userhomepage",viewUserHomePage)
+router.get("/userprofile",upDateUserProfile)
+router.post("/userprofile",userProfile)
 
 module.exports = router;

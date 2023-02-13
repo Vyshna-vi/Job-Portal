@@ -2,7 +2,7 @@
     height: 90px;
     margin-top: 10px;
     display: grid;
-    grid-template-columns:auto auto auto auto ;
+    grid-template-columns:auto auto auto auto auto;
     grid-column-gap: 6px;  
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
@@ -42,9 +42,12 @@
 }
 
 .ucempo{
-    margin-top: 26px;
+    margin-top: 0px;
     display: grid;
     grid-template-columns: auto;
+    color: darkcyan;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 .head1{
@@ -70,6 +73,9 @@
     margin-top: 30px;
     display: grid;
     grid-template-columns: auto auto;
+}
+.upload{
+    margin-top: 26px;
 }
 
 

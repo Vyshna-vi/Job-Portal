@@ -7,11 +7,11 @@ const viewIndexPage = function (req, res, next) {
 };
 
 const viewSignUpPage = function (req, res, next) {
-  if(req.session.alertMsg){
-    let {alertMsg}=req.session
-    res.render("users/signup",{alertMsg});
-  }else{
-    res.render("users/signup")
+  if (req.session.alertMsg) {
+    let { alertMsg } = req.session;
+    res.render("users/signup", { alertMsg });
+  } else {
+    res.render("users/signup");
   }
 };
 
@@ -41,7 +41,7 @@ const doSignUp = async function (req, res, next) {
   } catch (error) {
     console.log(error);
     // res.json({ sucess: false, message: "Cannot Add" });
-    req.session.alertMsg="Signup Failed Retry"
+    req.session.alertMsg = "Signup Failed Retry";
     res.redirect("/signup");
   }
 };
@@ -64,6 +64,29 @@ const doLogin = async function (req, res, next) {
   }
 };
 
+const upDateUserProfile = function (req, res, next) {
+  res.render("users/updateuserprofile");
+};
+
+const userProfile = async function (req, res, next) {
+  if (req.session.user)
+    try {
+      await UserModel.findOneAndUpdate(
+        { email: req.session.user.email },
+        req.body
+      );
+      // console.log(req.body)
+      await req.files.image.mv(`./public/user/${req.session.user._id}.jpg`);
+      await req.files.resume.mv(`./public/resume/${req.session.user._id}.pdf`);
+      res.redirect("/userhomepage");
+    } catch (error) {
+      res.redirect("/userprofile");
+    }
+  else {
+    res.redirect("/loginpage");
+  }
+};
+
 module.exports = {
   viewIndexPage,
   viewSignUpPage,
@@ -72,4 +95,6 @@ module.exports = {
   doSignUp,
   doLogin,
   viewUserHomePage,
+  upDateUserProfile,
+  userProfile,
 };
