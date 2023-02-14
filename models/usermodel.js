@@ -6,49 +6,52 @@ const userSchema = new mongoose.Schema({
     maxLength: 100,
     minLength: 3,
     default: false,
-    required:true
+    required: true,
   },
   email: {
     type: String,
-    unique:true,
+    unique: true,
     maxLength: 100,
     minLength: 3,
-    required:true
+    required: true,
   },
   password: {
     type: String,
     minLength: 10,
     default: false,
-    required:true
+    required: true,
   },
   phoneNumber: {
     type: Number,
     minLength: 10,
     default: false,
-    required:true
+    required: true,
   },
   workStatus: {
     type: String,
-    required:true
+    required: true,
   },
   about: {
     type: String,
   },
-  qualification:{
-    type:String
+  qualification: {
+    type: String,
   },
-  skill:{
-    type:String
+  skill: {
+    type: String,
   },
-  experiance:{
-    type:String
+  experiance: {
+    type: String,
   },
-  jobcatagory:{
-    type:String
+  jobcatagory: {
+    type: String,
   },
-  language:{
-    type:String
-  }
+  language: {
+    type: String,
+  },
+  totalprojects: {
+    type: String,
+  },
 });
 
 const UserModel = mongoose.model("User", userSchema);

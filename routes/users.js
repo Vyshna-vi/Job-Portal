@@ -1,4 +1,5 @@
 var express = require("express");
+const useronly=require("../middlewares/useronly")
 const {
   viewIndexPage,
   viewSignUpPage,
@@ -9,6 +10,7 @@ const {
   viewUserHomePage,
   upDateUserProfile,
   userProfile,
+  viewUserProfile,
 } = require("../contollers/usercontroler");
 var router = express.Router();
 
@@ -21,6 +23,7 @@ router.post("/signup", doSignUp);
 router.post("/loginpage", doLogin);
 router.get("/userhomepage",viewUserHomePage)
 router.get("/userprofile",upDateUserProfile)
-router.post("/userprofile",userProfile)
+router.post("/userprofile",useronly, userProfile)
+router.get("/viewuserprofile",useronly,viewUserProfile)
 
 module.exports = router;

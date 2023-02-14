@@ -69,22 +69,22 @@ const upDateUserProfile = function (req, res, next) {
 };
 
 const userProfile = async function (req, res, next) {
-  if (req.session.user)
-    try {
-      await UserModel.findOneAndUpdate(
-        { email: req.session.user.email },
-        req.body
-      );
-      // console.log(req.body)
-      await req.files.image.mv(`./public/user/${req.session.user._id}.jpg`);
-      await req.files.resume.mv(`./public/resume/${req.session.user._id}.pdf`);
-      res.redirect("/userhomepage");
-    } catch (error) {
-      res.redirect("/userprofile");
-    }
-  else {
-    res.redirect("/loginpage");
+  try {
+    await UserModel.findOneAndUpdate(
+      { email: req.session.user.email },
+      req.body
+    );
+    // console.log(req.body)
+    await req.files.image.mv(`./public/user/${req.session.user._id}.jpg`);
+    await req.files.resume.mv(`./public/resumeimg/${req.session.user._id}.pdf`);
+    res.redirect("/userhomepage");
+  } catch (error) {
+    res.redirect("/userprofile");
   }
+};
+
+const viewUserProfile = function (req, res, next) {
+  res.render("users/userprofile", { user: req.session.user });
 };
 
 module.exports = {
@@ -97,4 +97,5 @@ module.exports = {
   viewUserHomePage,
   upDateUserProfile,
   userProfile,
+  viewUserProfile,
 };
