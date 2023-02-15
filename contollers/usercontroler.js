@@ -70,16 +70,20 @@ const upDateUserProfile = function (req, res, next) {
 
 const userProfile = async function (req, res, next) {
   try {
-    await UserModel.findOneAndUpdate(
+    req.body.language = req.body.language.join(" ");
+    const updateUser = await UserModel.findOneAndUpdate(
       { email: req.session.user.email },
-      req.body
+      req.body,
+      { new: true }
     );
-    // console.log(req.body)
+    // console.log(req.body);
     await req.files.image.mv(`./public/user/${req.session.user._id}.jpg`);
     await req.files.resume.mv(`./public/resumeimg/${req.session.user._id}.pdf`);
-    res.redirect("/userhomepage");
+    req.session.user = updateUser;
+    res.redirect("/cmphomepage");
   } catch (error) {
     res.redirect("/userprofile");
+    console.log(error);
   }
 };
 

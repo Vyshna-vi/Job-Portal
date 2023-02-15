@@ -49,9 +49,37 @@ const doCmpLogin = async function (req, res, next) {
   }
 };
 
+const upDateCompanyProfile = function (req, res, next) {
+  res.render("company/updatecompanyprofile");
+};
+
+const companyProfile = async function (req, res, next) {
+  try {
+    const updateCompany = await CompanyModel.findOneAndUpdate(
+      { email: req.session.company.email },
+      req.body,
+      { new: true }
+    );
+    // console.log(req.body);
+    await req.files.image.mv(`./public/company/${req.session.company._id}.jpg`);
+    req.session.company = updateCompany;
+    res.redirect("/cmphomepage");
+  } catch (error) {
+    res.redirect("/updateprofile");
+    console.log(error);
+  }
+};
+
+const viewCompanyProfile = function (req, res, next) {
+  res.render("company/companyprofile", { company: req.session.company });
+};
+
 module.exports = {
   viewSignUpLoginPage,
   viewCmpHomePage,
   doCmpSignUp,
   doCmpLogin,
+  upDateCompanyProfile,
+  companyProfile,
+  viewCompanyProfile
 };

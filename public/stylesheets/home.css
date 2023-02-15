@@ -18,8 +18,9 @@
 .head{
     display: grid;
     grid-template-columns: 45px 25px;
-    grid-column-gap:15px ;
+    grid-column-gap:25px ;
     margin-left: 15px;
+    margin-top: 22px;
     font-family: 'Kavoon', cursive;
 }
 .findjob{

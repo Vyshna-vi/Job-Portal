@@ -20,6 +20,18 @@ const cmpSchema = new mongoose.Schema({
     type: Number,
     minLength: 10,
   },
+  about: {
+    type: String,
+  },
+  address: {
+    type: String,
+  },
+  vision: {
+    type: String,
+  },
+  mission: {
+    type: String,
+  },
 });
 
 const CompanyModel = mongoose.model("Company", cmpSchema);
