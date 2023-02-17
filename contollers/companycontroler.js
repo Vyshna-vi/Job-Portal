@@ -63,9 +63,9 @@ const companyProfile = async function (req, res, next) {
     // console.log(req.body);
     await req.files.image.mv(`./public/company/${req.session.company._id}.jpg`);
     req.session.company = updateCompany;
-    res.redirect("/cmphomepage");
+    res.redirect("/company/cmphomepage");
   } catch (error) {
-    res.redirect("/updateprofile");
+    res.redirect("/company/updateprofile");
     console.log(error);
   }
 };
@@ -81,5 +81,5 @@ module.exports = {
   doCmpLogin,
   upDateCompanyProfile,
   companyProfile,
-  viewCompanyProfile
+  viewCompanyProfile,
 };

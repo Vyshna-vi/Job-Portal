@@ -1,4 +1,6 @@
 var express = require("express");
+const companyonly = require("../middlewares/companyonly");
+
 const {
   viewSignUpLoginPage,
   viewCmpHomePage,
@@ -6,8 +8,9 @@ const {
   doCmpLogin,
   upDateCompanyProfile,
   companyProfile,
+  viewCompanyProfile,
 } = require("../contollers/companycontroler");
-const { addJob, doAddJob } = require("../contollers/jobcontroller");
+const { addJob, doAddJob, jobdata } = require("../contollers/jobcontroller");
 var router = express.Router();
 
 /* GET home page. */
@@ -16,8 +19,9 @@ router.get("/cmphomepage", viewCmpHomePage);
 router.post("/dosignup", doCmpSignUp);
 router.post("/signinlogin", doCmpLogin);
 router.get("/addjob", addJob);
-router.post("/addjob", doAddJob);
+router.post("/addjob", jobdata);
 router.get("/updateprofile", upDateCompanyProfile);
-router.post("/updateprofile", companyProfile);
+router.post("/updateprofile", companyonly, companyProfile);
+router.get("/viewcompanyprofile", companyonly, viewCompanyProfile);
 
 module.exports = router;
