@@ -1,0 +1,25 @@
+{{!--
+<link rel="stylesheet" href="/stylesheets/viewjobuser.css"> --}}
+
+
+{{#each userjobview}}
+
+<div class="job">
+
+    <h1>{{title}}</h1>
+    <p>{{qualification}}</p>
+    <p>Veccancy:{{veccancy}}</p>
+    <p>Salary:{{salary}}</p>
+    <p>Experiance:{{experiance}}</p>
+    <p>Date posted:{{dateposted}}</p>
+    <p>Last date:{{lastdate}}</p>
+    <p>Job type:{{jobtype}}</p>
+    <p>JOB STATUS:{{jobstatus}}</p>
+    <div class="icon">
+        <a href=""><BUtton>VIEW COMPANY</BUtton></i>
+        </a>
+        <a href="/apply/{{_id}}"><BUtton>APPLY</BUtton></i>
+        </a>
+    </div>
+</div>
+{{/each}}
