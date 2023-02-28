@@ -11,6 +11,9 @@ const {
   upDateUserProfile,
   userProfile,
   viewUserProfile,
+  postUserProfile,
+  doLogOutUser,
+  editUserProfile,
 } = require("../contollers/usercontroler");
 const {
   viewjobuser,
@@ -32,6 +35,9 @@ router.post("/userprofile", useronly, userProfile);
 router.get("/viewuserprofile", useronly, viewUserProfile);
 router.get("/viewjobuser", viewjobuser);
 router.get("/apply/:id", useronly, apply);
-router.get("/viewuserapplication",useronly,viewUserApplication);
+router.get('/viewuserapplication', useronly, viewUserApplication);
+router.get("/postuserprofile",postUserProfile)
+router.get("/edituserprofile",useronly,editUserProfile)
+router.get("/logoutuser",doLogOutUser)
 
 module.exports = router;

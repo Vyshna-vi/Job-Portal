@@ -1,123 +1,111 @@
 <link rel="stylesheet" href="stylesheets/userprofile.css">
 <div class="container emp-profile">
-    <form method="post">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="profile-img">
-                    <img src="/user/{{user._id}}.jpg" alt="">
-                    <div class="file btn btn-lg btn-primary">
-                        Change Photo
-                        <input type="file" name="file" />
+    <a href="/userhomepage">Back</a>
+    <div class="container emp-profile">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img src="/user/{{user._id}}.jpg" alt="">
+                        <div class="file btn btn-lg btn-primary">
+                            Change Photo
+                            <input type="file" name="file" />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="profile-head">
-                    <h5>
-                        {{user.userName}}
-                    </h5>
-                    <h6>
-                        {{user.jobcategory}}
-                    </h6>
-                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                                aria-controls="home" aria-selected="true">About</a>
-                        </li>
-                    </ul>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                        <h5>
+                            {{user.userName}}
+                        </h5>
+                        <h6>
+                            {{user.jobcatagory}}
+                        </h6>
+                        <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
                 </div>
             </div>
-            <div class="col-md-2">
-                <a href="/userprofile"><input type="button" class="profile-edit-btn" name="btnAddMore"
-                        value="Edit Profile" /></a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="profile-work">
-                    <p>QUALIFICATION</p>
-                    <P>{{user.qualification}}</P>
-                    <p>SKILLS</p>
-                    <p>{{user.skill}}</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-work">
+                        <p>Qualification</p>
+                        <p>{{user.qualification}}</p>
+                        <p>Skills</p>
+                        <p>{{user.skill}}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-8">
-                <div class="tab-content profile-tab" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Name</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{user.userName}}</p>
-                            </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <h1>
+                            <h1>About</h1>
+                        </h1>
+                        <div class="col-md-6">
+                            <label>Name</label>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Email</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{user.email}}</p>
-                            </div>
+                        <div class="col-md-6">
+                            <p>{{user.userName}}</p>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Phone</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{user.phoneNumber}}</p>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Email</label>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Profession</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{user.jobcatagory}}</p>
-                            </div>
+                        <div class="col-md-6">
+                            <p>{{user.email}}</p>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Languages</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{user.language}}</p>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Phone</label>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Experience</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{user.experiance}}</p>
-                            </div>
+                        <div class="col-md-6">
+                            <p>{{user.phoneNumber}}</p>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Total Projects</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{user.totalprojects}}</p>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Work Status</label>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Work Status</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{user.workStatus}}</p>
-                            </div>
+                        <div class="col-md-6">
+                            <p>{{user.workStatus}}</p>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <label>Your Bio</label><br />
-                                <p>{{user.about}}</p>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Experience</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{user.experiance}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Total Projects</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{totalprojects}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Languages</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{language}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Your Bio</label><br />
+                            <p>{{about}}</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
+    </div>
+</div>
+</form>
 </div>

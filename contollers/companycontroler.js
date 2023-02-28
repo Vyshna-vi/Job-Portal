@@ -11,7 +11,6 @@ const viewCmpHomePage = function (req, res, next) {
   } else {
     res.redirect("company/signinlogin");
   }
-  res.render("company/cmphomepage");
 };
 
 const doCmpSignUp = async function (req, res, next) {
@@ -23,8 +22,8 @@ const doCmpSignUp = async function (req, res, next) {
     res.redirect("/company/signinlogin");
   } catch (error) {
     console.log(error);
-    res.json({ sucess: false, message: "Cannot Add" });
-    // res.redirect("/signup")
+    // res.json({ sucess: false, message: "Cannot Add" });
+    res.redirect("/company/signinlogin")
   }
 };
 
@@ -39,6 +38,7 @@ const doCmpLogin = async function (req, res, next) {
     console.log(companyExsist);
     if (companyExsist) {
       req.session.company = company;
+      console.log(company);
       res.redirect("/company/cmphomepage");
     } else {
       res.redirect("/company/signlogin");
@@ -74,6 +74,37 @@ const viewCompanyProfile = function (req, res, next) {
   res.render("company/companyprofile", { company: req.session.company });
 };
 
+const CompanyUserProfileView = async (req, res, next) => {
+  let userprofile = await UserModel.findOne({ _id: req.params.id })
+  console.log("CompanyUserProfileView", userprofile);
+  res.render("company/companyuserprofileview", { userprofile })
+}
+
+const editProfile = async (req, res, next) => {
+  let profile = await CompanyModel.findOne({ email: req.session.company.email })
+  console.log("current profile", profile);
+  res.render("company/editProfile", { profile })
+
+}
+
+const editedProfile = async (req, res, next) => {
+  try {
+    console.log(req.body)
+    let newprofile = await CompanyModel.findOneAndUpdate({ email: req.session.company.email }, req.body, { new: true })
+    await req.files.image.mv(`./public/company/${req.session.company._id}.jpg`)
+    console.log("new company profile", newprofile);
+    req.session.company = newprofile
+    res.redirect("/company/viewcompanyprofile")
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+const doLogOut = async (req, res, next) => {
+  delete req.session.company
+  res.redirect("/company/signinlogin")
+}
+
 module.exports = {
   viewSignUpLoginPage,
   viewCmpHomePage,
@@ -82,4 +113,8 @@ module.exports = {
   upDateCompanyProfile,
   companyProfile,
   viewCompanyProfile,
+  CompanyUserProfileView,
+  doLogOut,
+  editProfile,
+  editedProfile
 };

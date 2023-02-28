@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<a href="/company/cmphomepage">Back</a>
+
+{{#each job}}
+
+<div class="job">
+
+    <h1>{{title}}</h1>
+    <p>{{qualification}}</p>
+    <p>Veccancy:{{vacancies}}</p>
+    <p>Salary:{{salary}}</p>
+    <p>Experiance:{{experiance}}</p>
+    <p>Date posted:{{datePosted}}</p>
+    <p>Last date:{{lastDate}}</p>
+    <p>Job type:{{jobType}}</p>
+    <p>JOB STATUS:{{status}}</p>
+    <div class="icon">
+        <a href="/company/foreditjob/{{_id}}"><i class="fa-solid fa-pen-to-square"></i>
+        </a>
+        <a href="/company/delete/{{_id}}"><i class="fa-solid fa-trash"></i>
+        </a>
+    </div>
+</div>
+
+{{/each}}
