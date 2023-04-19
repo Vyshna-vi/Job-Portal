@@ -1,12 +1,42 @@
+<link rel="stylesheet" href="/stylesheets/applyjobs.css" />
+
 {{#each companyapllyjob}}
-<h1>All jobs</h1>
+<div class="card-container">
+    <span class="pro">Reject</span>
+    <img class="round" src="/user/{{userid}}.jpg" alt="person">
+    <h3>{{jobTitle}}</h3>
+    <h6>{{userName}}</h6>
+    <p>{{status}}</p>
+    <div class="buttons">
+
+        <a href="/company/accept/{{_id}}"></a><button class="primary">
+            Accept
+        </button></a>
+        <a href="/company/companyuserprofileview/{{userid}}"></a><button class="primary ghost">
+            Following
+        </button></a>
+        <a href="/company/reject/{{_id}}"><button class="primary">Reject</button></a>
+    </div>
+</div>
+
+<footer>
+    <p>
+        Created with <i class="fa fa-heart"></i> by
+        <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+        - Read how I created this
+        <a target="_blank" href="https://florin-pop.com/blog/2019/04/profile-card-design">here</a>
+        - Design made by
+        <a target="_blank" href="https://dribbble.com/shots/6276930-Profile-Card-UI-Design">Ildiesign</a>
+    </p>
+</footer>
+{{!-- <h1>All jobs</h1>
 <img src="/user/{{userid}}.jpg" alt="person">
 <h1>{{jobTitle}}</h1>
 <p>{{userName}}</p>
 <p>{{status}}</p>
 <a href="/company/accept/{{_id}}"><button>Accept</button></a>
 <a href="/company/companyuserprofileview/{{userid}}"><button>view user</button></a>
-<a href="/company/reject/{{_id}}"><button>Reject</button></a>
+<a href="/company/reject/{{_id}}"><button>Reject</button></a> --}}
 
 {{/each}}
 

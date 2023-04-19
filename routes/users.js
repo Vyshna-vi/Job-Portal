@@ -36,8 +36,8 @@ router.get("/viewuserprofile", useronly, viewUserProfile);
 router.get("/viewjobuser", viewjobuser);
 router.get("/apply/:id", useronly, apply);
 router.get('/viewuserapplication', useronly, viewUserApplication);
-router.get("/postuserprofile",postUserProfile)
-router.get("/edituserprofile",useronly,editUserProfile)
-router.get("/logoutuser",doLogOutUser)
+router.get("/postuserprofile", postUserProfile)
+router.get("/edituserprofile", useronly, editUserProfile)
+router.get("/logoutuser", doLogOutUser)
 
 module.exports = router;
