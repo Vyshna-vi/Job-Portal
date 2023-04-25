@@ -1,16 +1,16 @@
-{{!--
-<link rel="stylesheet" href="/stylesheets/viewjobuser.css"> --}}
+
+<link rel="stylesheet" href="/stylesheets/viewjobuser.css"> 
 <div>
     {{!-- <a href="/viewuserapplication">View applied Jobs</a> --}}
-    <a href="/userhomepage">Back</a>
+    <a href="/userhomepage" class="button-9">Back</a>
 </div>
-
+<div class="allcard">
 {{#each userjobview}}
 
-<div class="job">
+<div class="card">
 
     <h1>{{title}}</h1>
-    <p>{{qualification}}</p>
+    <p>Qualification:{{qualification}}</p>
     <p>Veccancy:{{veccancy}}</p>
     <p>Salary:{{salary}}</p>
     <p>Experiance:{{experiance}}</p>
@@ -19,10 +19,11 @@
     <p>Job type:{{jobtype}}</p>
     <p>JOB STATUS:{{jobstatus}}</p>
     <div class="icon">
-        <a href=""><BUtton>VIEW COMPANY</BUtton></i>
+        <a href="" ><BUtton class="button-7" >VIEW COMPANY</BUtton></i>
         </a>
-        <a href="/apply/{{_id}}"><BUtton>APPLY</BUtton></i>
+        <a href="/apply/{{_id}}"><BUtton    class="card-button">APPLY</BUtton></i>
         </a>
     </div>
 </div>
 {{/each}}
+</div>

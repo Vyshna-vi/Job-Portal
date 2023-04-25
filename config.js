@@ -8,7 +8,7 @@ async function connectDb(){
     );
     console.log("DataBase Conneted")
   } catch (error) {
-    console.log("Error")
+    console.log("Error",error)
   }
 }
 

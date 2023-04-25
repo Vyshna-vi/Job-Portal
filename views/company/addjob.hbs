@@ -1,115 +1,67 @@
-<form action="/company/addjob" method="post">
+<link rel="stylesheet" href="/stylesheets/addjobcmp.css">
 
-    <div>
-        <label for="title">Title</label>
-        <input type="text" id="title" name="title">
-    </div>
-    <div>
-        <label for="description">Description</label>
-        <textarea id="description" name="description" rows="4" cols="50">
+
+<body>
+
+
+    <h1>ADD JOB</h1>
+
+    <form action="/company/addjob" method="post">
+
+        <div>
+            <label for="title">Title</label>
+            <input class="in" type="text" id="title" name="title">
+        </div>
+        <div>
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="4" cols="50">
 </textarea>
-    </div>
-    <div>
-        <label for="qualification">Choose Qualification</label>
-        <select name="qualification" id="qualification">
-            <option value="tenth">10th</option>
-            <option value="plustwo">PlusTwo</option>
-            <option value="degree">Degree</option>
-            <option value="diploma">Diploma</option>
-            <option value="other">Other</option>
-        </select>
-    </div>
-    <div>
-        <label for="vacancy">Vacancies</label>
-        <input type="number" id="vacancy" name="vacancies">
-    </div>
-    <div>
-        <label for="salary">Salary</label>
-        <input type="number" id="salary" name="salary">
-    </div>
-    <div>
-        <label for="experience">Choose Experience</label>
-        <select name="experiance" id="experiance">
-            <option value="fresher">Fresher</option>
-            <option value="one-two">1-2 Years</option>
-            <option value="three-four">3-4 Years</option>
-            <option value="five">5 and Above</option>
-        </select>
-    </div>
-    <div>
-        <label for="lastdate">Last Date</label>
-        <input type="date" id="lastdate" name="lastDate">
-    </div>
-    <div>
-        <p>Job type:</p>
-        <input type="radio" id="parttime" name="jobType" value="parttime">
-        <label for="parttime">Part Time</label><br>
-        <input type="radio" id="fulltime" name="jobType" value="fulltime">
-        <label for="fulltime">Full Time</label><br>
-        <input type="radio" id="workhome" name="jobType" value="workhome">
-        <label for="workhome">Work From Home</label>
-    </div>
-    <div>
-        <button type="submit">Submit</button>
-    </div>
-    <div class="wrap">
-        <div class="box">
-            <div class="box-top">
-                <img class="box-image"
-                    src="https://images.unsplash.com/photo-1622219809260-ce065fc5277f?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMzMwNjYxOQ&ixlib=rb-1.2.1&q=85"
-                    alt="Girl Eating Pizza">
-                <div class="title-flex">
-                    <h3 class="box-title">Kelsie Meyer</h3>
-                    <p class="user-follow-info">17 Projects</p>
-                </div>
-                <p class="description">Whipped steamed roast cream beans macchiato skinny grinder café. Iced grinder go
-                    mocha steamed grounds cultivar panna aroma.</p>
-            </div>
-            <a href="#" class="button">Follow Kelsie</a>
         </div>
-        <div class="box">
-            <div class="box-top">
-                <img class="box-image"
-                    src="https://images.unsplash.com/photo-1488161628813-04466f872be2?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMzMxNTMwNQ&ixlib=rb-1.2.1&q=85"
-                    alt="Girl Eating Pizza">
-                <div class="title-flex">
-                    <h3 class="box-title">Mark Carusso</h3>
-                    <p class="user-follow-info">33 Projects</p>
-                </div>
-                <p class="description">Whipped steamed roast cream beans macchiato skinny grinder café. Iced grinder go
-                    mocha steamed grounds cultivar panna aroma.</p>
-            </div>
-            <a href="#" class="button">Follow Mark</a>
+        <div>
+            <label for="qualification">Choose Qualification</label>
+            <select name="qualification" id="qualification">
+                <option value="tenth">10th</option>
+                <option value="plustwo">PlusTwo</option>
+                <option value="degree">Degree</option>
+                <option value="diploma">Diploma</option>
+                <option value="other">Other</option>
+            </select>
         </div>
-        <div class="box">
-            <div class="box-top">
-                <img class="box-image"
-                    src="https://images.unsplash.com/photo-1456885284447-7dd4bb8720bf?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMzMxNTQzNA&ixlib=rb-1.2.1&q=85"
-                    alt="Girl Eating Pizza">
-                <div class="title-flex">
-                    <h3 class="box-title">Taylor Green</h3>
-                    <p class="user-follow-info">26 Projects</p>
-                </div>
-                <p class="description">Whipped steamed roast cream beans macchiato skinny grinder café. Iced grinder go
-                    mocha steamed grounds cultivar panna aroma.</p>
-            </div>
-            <a href="#" class="button">Follow Taylor</a>
+        <div>
+            <label for="vacancy">Vacancies</label>
+            <input  class="in" type="number" id="vacancy" name="vacancies">
         </div>
-        <div class="box">
-            <div class="box-top">
-                <img class="box-image"
-                    src="https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMzMxNjA1MA&ixlib=rb-1.2.1&q=85"
-                    alt="Girl Eating Pizza">
-                <div class="title-flex">
-                    <h3 class="box-title">Isaiah Jian</h3>
-                    <p class="user-follow-info">12 Projects</p>
-                </div>
-                <p class="description">Whipped steamed roast cream beans macchiato skinny grinder café. Iced grinder go
-                    mocha steamed grounds cultivar panna aroma.</p>
-            </div>
-            <a href="#" class="button">Follow Isaiah</a>
+        <div>
+            <label for="salary">Salary</label>
+            <input  class="in" type="number" id="salary" name="salary">
         </div>
-    </div>
-    <a href="/company/cmphomepage">Back</a>
+        <div>
+            <label for="experience">Choose Experience</label>
+            <select name="experiance" id="experiance">
+                <option value="fresher">Fresher</option>
+                <option value="one-two">1-2 Years</option>
+                <option value="three-four">3-4 Years</option>
+                <option value="five">5 and Above</option>
+            </select>
+        </div>
+        <div>
+            <label for="lastdate">Last Date</label>
+            <input type="date" id="lastdate" name="lastDate">
+        </div>
+        <div>
+            <p>Job type:</p>
+            <input type="radio" id="parttime" name="jobType" value="parttime">
+            <label for="parttime">Part Time</label><br>
+            <input type="radio" id="fulltime" name="jobType" value="fulltime">
+            <label for="fulltime">Full Time</label><br>
+            <input type="radio" id="workhome" name="jobType" value="workhome">
+            <label for="workhome">Work From Home</label>
+        </div>
+        <div class="btn">
+            <button  class="button-66" type="submit">Submit</button>
+            <a  class="button-66"  href="/company/cmphomepage">Back</a>
+        </div>
+        </div>
 
-</form>
+    </form>
+</body>

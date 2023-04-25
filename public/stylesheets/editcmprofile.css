@@ -1,0 +1,92 @@
+h1{
+    margin-left: 350px;
+    margin-bottom: 30px;
+    font-weight: 800;
+    color: #0276FF;
+}
+h2{
+    font-size: larger;
+    margin-top: 28px;
+    color: #0276FF;
+
+}
+#profileimg{
+    background-color: transparent;
+    margin-top: 20px;
+}
+.container{
+    width: 900px;
+    height: 750px;
+    /* border: 2px solid; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+}
+body{
+    background-color: rgb(224, 225, 226);
+}
+form{
+    display: flex;
+
+}
+input{
+    margin: 10px;
+}
+.first{
+    /* border: 1px solid; */
+    margin-left: 100px;
+    width: 200px;
+}
+.second{
+    
+    /* border: 1px solid;    */
+    width: 500px;
+}
+.large{
+    width: 400px;
+    height: 70px;
+}
+.h2{
+    margin-top: 80px;
+    font-size: larger;
+}
+
+.button-22 {
+  align-items: center;
+  appearance: button;
+  background-color: #0276FF;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  width: 100px;
+  font-family: "RM Neue",sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  padding: 10px 21px;
+  text-align: center;
+  text-transform: none;
+  transition: color .13s ease-in-out,background .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-22:active {
+  background-color: #006AE8;
+}
+
+.button-22:hover {
+  background-color: #1C84FF;
+}
+.btn1{
+    transform: translate(20px,50px);
+}
+.btn2{
+    transform: translate(0px,20px);
+}

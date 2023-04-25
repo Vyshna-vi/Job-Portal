@@ -1,0 +1,209 @@
+body {
+    width: 100vw;
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+}
+
+.jobnav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 100px;
+    /* border: 2px solid black; */
+    box-shadow: 2px 5px 10px;
+    margin: 0;
+    position: fixed;
+    background-color: white;
+    top: 0;
+}
+
+.left {
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.right {
+    width: 130px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jobnav h1 {
+    font-weight: 800;
+}
+
+.span2 {
+    color: rgb(53, 138, 110);
+    text-shadow: 1px 3px black;
+}
+
+.span1 {
+    text-shadow: 1px 3px black;
+    color: rgb(67, 84, 144);
+}
+
+.middle {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    margin-top: 130px;
+}
+
+.middle img {
+    width: 50%;
+    height: 400px;
+}
+
+.abouthead {
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.b1:hover {
+    text-decoration: none;
+}
+
+.button-8 {
+    background-color: #e1ecf4;
+    border-radius: 3px;
+    border: 1px solid #7aa7c7;
+    box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #39739d;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.15385;
+    margin: 0;
+    outline: none;
+    padding: 8px .8em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.button-8:hover,
+.button-8:focus {
+    background-color: #b3d3ea;
+    color: #2c5777;
+}
+
+.button-8:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-8:active {
+    background-color: #a0c7e4;
+    box-shadow: none;
+    color: #2c5777;
+}
+
+.button-52 {
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+
+    background-color: rgb(255, 255, 255);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    /* transform: translate(200px); */
+    margin-left: 190px;
+}
+
+.button-52:after {
+    content: "";
+    background-color: #ffffff;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+}
+
+.button-52:hover:after {
+    top: 0px;
+    left: 0px;
+}
+
+@media (min-width: 768px) {
+    .button-52 {
+        padding: 13px 50px 13px;
+    }
+}
+
+.companyinfo {
+    background-image: url("https://grubstreetauthor.co.uk/wp-content/uploads/2020/02/london-business-meeting-in-progress.jpg");
+    width: 100vw;
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.black {
+    width: 100vw;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.547);
+    display: grid;
+    place-items: center;
+    color: #fff;
+}
+
+.black h3 {
+    transform: translate(160px);
+}
+
+.black a {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.black h2 {
+    font-weight: 100;
+}
+.flutter{
+    width: 100vw;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 150px;
+    background-color: #b7b9ba;
+    margin: 0;
+    top: 0;
+    transform: translate(0px,-42px);
+}
+.details{
+    color: brown;
+    transform: translate(-350px);
+}
+.line{
+    font-size: larger;
+}
+.details h3{
+    font-size: medium;
+}
+.otherdetail h3{
+    font-size: medium;
+}
+.jobh{
+    transform: translate(350px,-130px);
+    font-weight: 1000;
+    color: #000;
+}

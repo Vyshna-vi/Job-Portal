@@ -1,20 +1,33 @@
-<h1>Edit profile</h1>
-<form action="/company/editprofile" method="post" enctype="multipart/form-data">
-    <input type="file" name="image" id="" placeholder="company image" required="true" accept=".jpg">
-    <h2>Company Name</h2>
-    <input type="text" value="{{profile.compName}}" name="compName">
-    <h2>Gmail</h2>
-    <input type="text" value="{{profile.email}}" name="email">
-    <h2>Phone</h2>
-    <input type="text" value="{{profile.phnNumber}}" name="phnNumber">
-    <h2>About</h2>
-    <input type="text" value="{{profile.about}}" name="about">
-    <h2>Address</h2>
-    <input type="text" value="{{profile.address}}" name="address">
-    <h2>Mission</h2>
-    <input type="text" value="{{profile.mission}}" name="mission">
-    <h2>vision</h2>
-    <input type="text" value="{{profile.vision}}" name="vision"><br>
-    <button>save</button>
-</form>
-<a href="/company/cmphomepage">Back</a>
+<link rel="stylesheet" href="/stylesheets/editcmprofile.css">
+
+<div class="container">
+    <h1>Edit profile</h1>
+    <form action="/company/editprofile" method="post" enctype="multipart/form-data">
+
+
+        <div class="first">
+            <h2>Profile</h2>
+            <h2>Company Name</h2>
+            <h2>Gmail</h2>
+            <h2>Phone</h2>
+            <h2>About</h2>
+            <h2 class="h2">Address</h2>
+            <h2 class="h2">Mission</h2>
+            <h2 class="h2">vision</h2>
+            <a class="button-22 btn1" href="/company/cmphomepage">Back</a>
+
+        </div>
+        <div class="second">
+            <input type="file" name="image" id="profileimg" placeholder="company image" required="true"
+                accept=".jpg"><br>
+            <input type="text" value="{{profile.compName}}" name="compName"><br>
+            <input type="text" value="{{profile.email}}" name="email"><br>
+            <input type="text" value="{{profile.phnNumber}}" name="phnNumber"><br>
+            <input type="text" class="large" value="{{profile.about}}" name="about"><br>
+            <input type="text" class="large" value="{{profile.address}}" name="address"><br>
+            <input type="text" class="large" value="{{profile.mission}}" name="mission"><br>
+            <input type="text" class="large" value="{{profile.vision}}" name="vision"><br>
+            <button class="button-22 btn2" >save</button>
+        </div>
+    </form>
+</div>
