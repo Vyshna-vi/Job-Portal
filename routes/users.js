@@ -1,7 +1,7 @@
 var express = require("express");
 const useronly = require("../middlewares/useronly");
 const {
-  viewIndexPage,
+  
   viewSignUpPage,
   viewHomePage,
   viewLoginPage,
@@ -23,9 +23,9 @@ const {
 var router = express.Router();
 
 /* GET home page. */
-router.get("/", viewIndexPage);
+// router.get("/", viewIndexPage);
 router.get("/signup", viewSignUpPage);
-router.get("/homepage", viewHomePage);
+router.get("/", viewHomePage);
 router.get("/loginpage", viewLoginPage);
 router.post("/signup", doSignUp);
 router.post("/loginpage", doLogin);

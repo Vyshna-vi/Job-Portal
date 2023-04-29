@@ -3,9 +3,9 @@ const JobApplicationModel = require("../models/jobapplicationmodel")
 const bcrypt = require("bcrypt");
 const { model } = require("mongoose");
 
-const viewIndexPage = function (req, res, next) {
-  res.render("index", { title: "Express" });
-};
+// const viewIndexPage = function (req, res, next) {
+//   res.render("index", { title: "Express" });
+// };
 
 const viewSignUpPage = function (req, res, next) {
   if (req.session.alertMsg) {
@@ -124,7 +124,7 @@ const doLogOutUser = function (req, res, next) {
 }
 
 module.exports = {
-  viewIndexPage,
+  
   viewSignUpPage,
   viewHomePage,
   viewLoginPage,
